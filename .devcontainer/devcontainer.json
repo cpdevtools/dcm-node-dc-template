@@ -1,0 +1,27 @@
+{
+    "name": "Dev Container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "remoteUser": "vscode",
+    "workspaceFolder": "/devcontainer",
+    "containerEnv": {
+        "CONTAINER_FOLDER": "/devcontainer",
+        "REPOS": "/devcontainer/repos"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18.16.1"
+        },
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "git.defaultCloneDirectory": "/devcontainer/repos",
+                "git.pullTags": false,
+                "git.autofetch": "all"
+            }
+        }
+    }
+}
